@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Home extends StatelessWidget {
   const Home({Key key, this.user}) : super(key: key);
@@ -12,7 +11,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("hola ${user.email}"),
     ),
-      body: StreamBuilder<DocumentSnapshot>(
+     /* body: StreamBuilder<DocumentSnapshot>(
         stream: Firestore.instance.collection('users').document(user.uid).snapshots(),
         builder: (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot){
           if(snapshot.hasError){
@@ -24,7 +23,7 @@ class Home extends StatelessWidget {
               return Text(snapshot.data['name']);
           }
        },
-      ),
+      ),*/
     );
   }
 }
